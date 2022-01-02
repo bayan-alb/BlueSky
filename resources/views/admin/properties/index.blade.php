@@ -33,8 +33,10 @@
     <td>{{$property->baths}}</td>
     <td>{{$property->space}}</td>
     <td><div class="btn-group">
-    <button type="button" class="btn btn-primary">Update</button>
-    <button type="button" class="btn btn-danger">Delete</button>
+    
+    <a class="btn btn-primary" href="/Properties/edit/{{$property->id}}">Update</a>
+		<a class="btn btn-danger" href="/Properties/delete/{{$property->id}}">Delete</a>
+
   </div></td>
   </tr>
   @endforeach

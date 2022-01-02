@@ -43,4 +43,54 @@ class PropertiesController extends Controller
         return view('admin.properties.index' ,compact('properties')); 
 
     }
+
+    public function edit($id)
+    {
+        $property = Property::find($id);
+        return view('admin.properties.edit' , compact('property'));
+    }
+
+    public function update($id , Request $request)
+    {
+        $property = Property::find($id);
+        
+        if(isset($request->name)){
+        $property->name = $request->name;
+        }
+        if(isset($request->description)){
+            $property->description = $request->description;
+            }
+
+            if(isset($request->price)){
+                $property->price = $request->price;
+                }
+                if(isset($request->status)){
+                    $property->status = $request->status;
+                    }
+                    if(isset($request->rooms)){
+                        $property->rooms = $request->rooms;
+                        }   
+                        if(isset($request->baths)){
+                            $property->baths = $request->baths;
+                            }   
+                            if(isset($request->space)){
+                                $property->space = $request->space;
+                                }    
+
+        $property->save();
+        return redirect()->route('indexProperties');
+    }
+
+    public function delete($id){
+
+        $property = Property::find($id);
+        $property->delete();
+        return redirect()->route('indexProperties');
+    
+        
+    }
 }
+
+
+
+

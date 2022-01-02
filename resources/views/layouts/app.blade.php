@@ -39,7 +39,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{route('AddProperties')}}">Create Property</a>
-                <a class="dropdown-item" href="#">All properties</a>              
+                <a class="dropdown-item" href="{{route('indexProperties')}}">All properties</a>              
               </div>
             </li>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
