@@ -10,10 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// views
+Route::get('/', 'ViewsController@indexfun')->name('indexroute');
+Route::get('/about', 'ViewsController@about')->name('about');
+Route::get('/contact', 'ViewsController@contact')->name('contact');
+Route::get('/pricing', 'ViewsController@pricing')->name('pricing');
+Route::get('/projects', 'ViewsController@projects')->name('projects');
+Route::get('/services', 'ViewsController@services')->name('services');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 Route::get('/home', 'PropertiesController@propertyTool')->name('properties');
